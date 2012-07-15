@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 	if(use_mtr)
 	    cmdstring = "mtr -r -c 3 -n " + ip
 		+ " | grep -v HOST "
-		+ " | awk ' { print $1 \" \" $6 } ' > " + outfile;
+		+ " | awk ' { print $2 \" \" $6 } ' > " + outfile;
 	else
 	    cmdstring = string("traceroute -n ") + (traceroute_I?"-I ":"") + ip 
 	    + " | awk ' { print $2, $3, $5, $7 } ' > " + outfile;
