@@ -1,0 +1,10 @@
+This is a small library I use for all my C++ programs. Its far from complete
+but helps me out for now. Its required for netmap and makelist.
+
+This lib _should_ compile on any system with a decent C++-compiler (such as
+g++)
+
+Thanks to Marc Palmans for hist contributions on this.
+
+Wouter Godefroy
+

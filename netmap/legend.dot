@@ -1,0 +1,42 @@
+digraph "NetMap Legend" {
+	node [
+	  color = black,
+	  style = filled ];
+
+	"firstnode" 	[ label = "First node", shape=parallelogram, color=gold ]
+	"twolinks"  	[ label = "2 links", shape=ellipse, color=cornsilk ]
+	"threelinks" 	[ label = "3 links", shape=box, color=lightsalmon ]
+	"fourlinks"  	[ label = "4 links", shape=box, color=orange ]
+	"fivelinks"  	[ label = "5 links", shape=box, color=orangered ]
+	"sixlinks"  	[ label = " 6 links", shape=box, color=crimson ]
+	"sevenlinks"  	[ label = ">= 7 links", shape=box, color=maroon ]
+	"unknown_1"	[ label = "Unknown\nhost", shape=triangle, color = red]	
+
+	
+
+	"firstnode" -> "twolinks";
+	"twolinks" -> "threelinks";
+	"threelinks" -> "n2";
+	"threelinks" -> "fourlinks";
+	"fourlinks"  -> "n3";
+	"fourlinks"  -> "n4";
+	"fourlinks"  -> "fivelinks";
+	"fivelinks"  -> "n5";
+	"fivelinks"  -> "n6";
+	"fivelinks"  -> "n7";
+	"fivelinks"  -> "sixlinks";
+	"sixlinks"   -> "n8";
+	"sixlinks"   -> "n9";
+	"sixlinks"   -> "n10";
+	"sixlinks"   -> "n11";
+	"sixlinks"   -> "sevenlinks";
+	"sevenlinks"   -> "n12";
+	"sevenlinks"   -> "n13";
+	"sevenlinks"   -> "n14";
+	"sevenlinks"   -> "n15";
+	"sevenlinks"   -> "n16";
+	"sevenlinks"   -> "n17";
+
+}
+
+

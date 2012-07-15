@@ -1,0 +1,111 @@
+NetMap
+======
+
+Running NetMap
+--------------
+
+Usage: netmap [options]
+
+  Netmap will (recursively) read the datadir containing the output of
+  makelist. It will then create a list of all ip addresses and there
+  interconnections. Unless the -n option is used, netmap will try to resolve
+  the hostname of the address, but a cache is kept to speed up consecutive
+  runs.
+
+  Unless the -s option is used, netmap will insert an unknown host when a host
+  did not respond on the traceroute. When 2 (or more) consecutive hosts in the
+  route do not reply, they will be grouped in one node and the label will
+  indicate the number of unknown hosts.
+
+  Note that the datadir will be read recursively, this makes it possible to place
+  the makelist output of different hosts in different subdirectories of netdata/.
+
+  Options:
+
+    -v	
+	Be verbose
+
+   -o <outfile.dot>
+      
+        Name for the dotty output file. The default is ./netmap.dot
+
+   -d <datadir>
+
+        Specify the datadir where the makelist output is located. 
+
+
+        The
+        default is ../netdata.
+
+   -m <n> 
+
+        Specify the maximum number of hops a node can be removed from the
+        start. 0 gives no maximum, which is the default.
+
+   -i 
+
+        With this option netmap will create a directional dotty graph. This
+        option gives a better result when drawing larger maps.
+
+   -n
+      
+       Don't resolv hostnames. 
+
+   -I <hostfile>
+
+       With this option you can specify a list of ip-hostname pairs, eg for
+       your local network. Lines in this file should start with the ip,
+       followed by the hostname. Lines that don't start with a numeric value
+       are ignored.
+      
+      Example:
+
+	    #Local network
+	    192.168.0.1		alpha
+	    192.168.0.42	beta
+	    192.168.30.5	gamma
+
+	  
+   -C <cachedipfile>
+
+       Specify the file to use as local hostname cache. This file is read upon
+       when netmap starts and written when it ends. It has the same format as
+       the hostfile described for the -I option. The default value is
+       ./netmap.hostcache.
+
+   -F <failedipfile>
+
+       Netmap keeps a cache of all ips it failed to resolv. The default value
+       is ./netmap.failedip.
+
+   -s 
+
+       By default netmap inserts an unknown host when one host in the route did
+       not reply on the traceroute, but the rest of the route is valid. When
+       this option is used, netmap will stop reading when an invalid host is
+       encountered in the traceroute output.
+
+   -V 
+
+       Print version and exit.
+
+
+The output graph
+================
+
+The first node in a graph will be a parallelogram. For all other nodes, the
+shape and the color depends on the number of links it has to other nodes
+
+Legend:
+
+	Number of links	   Shape	Color	
+	2		   ellipse	cornsilk
+	3		   box		lightsalmon
+	4		   box		orange
+	5		   box		orangered
+	6		   box		crimson
+	>= 7		   box		maroon
+
+	Invalid host	   triangle	red	
+
+See legend.dot for a graphical version.

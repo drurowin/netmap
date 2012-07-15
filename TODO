@@ -1,0 +1,17 @@
+NetMap TODO
+===========
+
+These are the mayor changes I have in mind for NetMap, drop me note if you want
+to help out with one of these:
+
+   1. Integrate a parallel (and tcp based) traceroute in netmap
+
+   2. Integerate the host-dectection of nmap in netmap
+
+   3. Consider a MySQL interface where NetMap users can submit there
+      results. With this we could try to make a complete map of the internet.
+
+   4. Modify dotty to have NetMap specific menus...
+
+
+Wouter Godefroy

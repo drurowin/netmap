@@ -1,0 +1,8 @@
+*.a
+dbgout.txt
+makelist/makelist
+netdata
+netmap/netmap
+netmap.dot
+*.failedip
+*.hostcache

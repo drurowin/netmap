@@ -1,0 +1,56 @@
+NetMap Readme
+=============
+
+Building the software
+---------------------
+
+* The current version requires the following:
+
+	* g++ and GNU-make
+
+        * some tools: traceroute, grep, awk
+
+        * the Dotty program found in the Graphviz package, you can download it from
+	  http://www.research.att.com/sw/tools/graphviz/download.html
+
+The only thing you have to do is to run make from this directory and everything
+should work. If not, don't hesitate to report problems.
+
+
+Running NetMap
+--------------
+
+The current version of NetMap consists of two programs: makelist & netmap.
+
+* makelist
+
+  This program just executes traceroute for each host it finds in the
+  hosts.txt. You should create your own file, but the default one will work as
+  well. 
+
+  It stores the output of the traceroutes in the ./netdata/ directory (or any
+  directory you specify in config.h) where it is read by netmap.
+
+  I am currently working on a version of netmap which incorporates this
+  functionality, so makelist should disappear in the future.
+
+* netmap 
+
+  When run with no arguments, netmap reads the data from ./netdata/ and
+  generates a netmap.dot file. Run netmap -h to get a list of all command line
+  options. Note that netmap reads ./netdata/ recursively, so you can place the
+  makelist output of different hosts in different sub-directories in
+  ./netdata/. 
+
+  You can then generate a graphical map of the network by running 
+  "dotty netmap.dot" 
+
+  For more details see netmap/README.
+
+This software is released under the GPL and comes with absolutely no warranty. 
+
+Suggestions, comments and bug-reports welcome!
+
+Wouter Godefroy
+wouter@belgoline.com
+  

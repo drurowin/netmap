@@ -1,0 +1,26 @@
+Release 0.1.3:
+ - Applied path of Jean-Gregoire Foulon (thanks!)
+ - Other minor fixes to pull source into this decade
+
+Release 0.1.2b:
+ - Fixed push_back() bug in search.c
+ - Fixed host_count() bug in hostclass.c
+ - Fixed unsigned char[] that prevented successful compilation on Solaris 
+   (Thanks to Kevin)
+ - Fixed Makefile of netmap for Solaris (Thanks to Kevin)
+     + Solaris now compiles out of the box if you have Gnu-Make
+ - Added the -I option for makelist, to use traceroute -I (Thanks to Xercist) 
+ - Added the -m option for makelist to use mtr instead of traceroute (Thanks to
+   Xercist) 
+ - Added lookup.c (for cache lookups) and the -I option for netmap, to include
+   local address lists.
+ - Added invalid hosts, and the -s option
+ - Minor fixes and tweaks
+ - Added netmap README
+
+Release 0.1.1:
+ - Solved invalid dependencies in Makefile
+
+Release 0.1:
+ - Initial release
+
